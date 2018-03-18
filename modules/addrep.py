@@ -6,7 +6,7 @@ ranks = {0: "Crew Member", 15:"Buccaneers", 50:"Quartermasters", 100: "First Mat
 forRanks = sorted(ranks.items(), key=operator.itemgetter(0))
 async def addrep(message, client):
     author = message.author
-    if "pirate lords" in [y.name.lower() for y in author.roles] or "captains" in [y.name.lower() for y in author.roles]:
+    if "pirate lords" in [y.name.lower() for y in author.roles]:
         addstring = message.content.split()
         if(len(addstring) > 3):
             await client.send_message(message.channel, "You added too many arguments")
