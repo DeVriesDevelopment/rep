@@ -1,14 +1,11 @@
-from threading import Thread
-import os.path
-import asyncio
 import discord
-from modules.schoen import schoen
-from modules.cadeautjes import cadeautjes
-from modules.lekkernijen import lekkernijen
-from modules.hulppiet import hulppiet
+from modules.addrep import addrep
+from modules.subrep import subrep
+from modules.ranks import ranks
+from modules.reputation import reputation
 
 
-token = 'NDI1MDA1OTE2MDgyMDEyMTcx.DZBKQg.5y-LPDU7De26AU0to1P0Bj4x-bY'
+token = 'NDI1MDA1OTE2MDgyMDEyMTcx.DZBW5g.COJC2GTmlHrGkPdSYrYWCG6cPQw'
 client = discord.Client()
 
 
@@ -18,25 +15,24 @@ def logEntry(author, command):
 
 @client.event
 async def on_message(message):
-    # even zorgen dat marco niet tegen zichzelf gaat kletsen
     if message.author == client.user:
         return
 
-    if message.content.startswith('!schoen'):
+    if message.content.startswith('!addrep'):
         logEntry(message.author.name, message.content)
-        await schoen(message, client)
+        await addrep(message, client)
 
-    if message.content.startswith('!cadeautjes'):
+    if message.content.startswith('!subrep'):
         logEntry(message.author.name, message.content)
-        await cadeautjes(message, client)
+        await subrep(message, client)
 
-    if message.content.startswith('!lekkernijen'):
+    if message.content.startswith('!ranks'):
         logEntry(message.author.name, message.content)
-        await lekkernijen(message, client)
+        await ranks(message, client)
 
-    if message.content.startswith('!hulppiet'):
+    if message.content.startswith('!reputation'):
         logEntry(message.author.name, message.content)
-        await hulppiet(message, client)
+        await reputation(message, client)
 
 
 
