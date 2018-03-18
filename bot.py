@@ -5,7 +5,7 @@ from modules.ranks import ranks
 from modules.reputation import reputation
 
 
-token = 'NDI1MDA1OTE2MDgyMDEyMTcx.DZBW5g.COJC2GTmlHrGkPdSYrYWCG6cPQw'
+token = ''
 client = discord.Client()
 
 
